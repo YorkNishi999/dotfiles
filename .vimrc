@@ -47,7 +47,7 @@ if dein#check_install()
 endif
 
 " *******************************************************
-" 基本設定 
+" 基本設定
 " *******************************************************
 " 文字コード
 set encoding=utf-8
@@ -76,6 +76,10 @@ set showmatch
 set list
 set listchars=tab:>-,extends:<,trail:-,eol:$
 set laststatus=2
+
+" change color of listchars such as tab
+hi NonText    ctermbg=None ctermfg=59
+hi SpecialKey ctermbg=None ctermfg=59
 
 set autoindent
 set expandtab
@@ -198,7 +202,7 @@ let g:syntastic_scss_checkers = ['scss_lint']
 let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
 
 " *******************************************************
-" vim-go 
+" vim-go
 " *******************************************************
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
@@ -206,3 +210,8 @@ let g:go_highlight_fields = 1
 let g:go_highlight_types = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
+
+" If you want to install not installed plugins on startup.
+if dein#check_install()
+  call dein#install()
+endif
